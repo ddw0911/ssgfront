@@ -1,0 +1,46 @@
+# 태그Tag, 요소Element, 속성Attribute
+
+요소 - HTML 페이지 구성하는 부품 (Title, Body, 이미지)  (JS에서 객체)
+태그 - 요소를 작성하는 방법
+
+# 웹페이지에 CSS, JS 적용
+CSS - 내부 style / 외부 link
+JS - 내부 script / 외부 script src
+
+# 오류와 검증
+F12 or Ctrl Shift i의 console
+
+# html 기본태그
+- 글자 태그
+    * 앵커 <a></a>
+    * 제목, 본문
+    * 글자 모양
+
+- 목록 태그
+    * 순서 있는
+    * 순서 없는
+
+- 테이블 태그
+    * 테이블, 셀 생성
+    * 행, 열 병합
+
+- 미디어 태그 (오디오, 비디오, 이미지)
+    * 앵커
+    * 글자 모양
+
+lorem ipsum : 더미데이터 만들때
+
+# 미디어태그
+이미지, 오디오, 비디오를 HTML에 삽입
+img - src(경로지정), alt(이미지 없을때 나오는 글자설정), width, height
+audio - src, preload, autoplay, loop, controls
+video - width, height
+
+# 입력양식 태그 : 사용자에게 정보를 입력받기 위한 요소
+    - 기본 입력양식
+    - 선택가능한 입력양식
+    - 입력양식 그룹
+
+# 구조화
+    - 공간 분할(div)
+    - 시맨틱 태그

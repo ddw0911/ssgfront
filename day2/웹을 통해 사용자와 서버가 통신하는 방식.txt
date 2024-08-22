@@ -1,0 +1,12 @@
+웹 기반 유저에게 서비스
+통신하는 방식
+클라이언트(유저) /w 웹브라우저(크롬, 사파리) /w http 프로토콜
+- 웹서버 (정적자원(html,css,이미지) 처리) ex) apache, nginx
+- was (동적자원(회원가입, 로그인) 처리) ex) Tomcat, Jeus
+- dbms 액세스 (RDMBS, NoSQL)
+
+why 웹서버
+- 처리 분담 (was : 동적처리, 웹서버 : 비동기처리)
+-> 높은 성능 
+
+- 보안기능 /w ssl, proxy 중개(road-balancing)

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력양식 태그 연습</title>
+</head>
+<body>
+    <!-- 1. 입력양식을 그룹핑하여 지정된 서버로 전송을 위한 태그 <form> -->
+        <!-- action - 서버프로그램에 데이터 전송 -->
+         <!-- get : 파일이름?search=ssg1234 - 주소에 데이를 입력하여 전달 -->
+          <!-- post : 주소변경x - 데이터를 보여주지 않고 전달 -->
+    <form action="/login.do" method="get">
+        <input type="text" name="search">
+        <input type="text" name="address">
+        <input type="submit" value="전송">    
+    <form>
+</body>
+</html>
