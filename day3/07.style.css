@@ -1,0 +1,54 @@
+
+*{
+    /* 전체선택자 */
+    color: red;
+}
+
+p {
+    /* 유형선택자 */
+    color: blue;
+}
+
+h1{
+    color: green;
+    font-size: 100px;
+    text-align: center;
+}
+
+#p1 {
+    /* 아이디선택자 */
+    color: grey;
+}
+
+.container {
+    /* 클래스선택자 */
+    color: coral;
+    background-color: blue;
+}
+
+.myclass1{
+    color: hotpink;
+}
+
+.myclass2{
+    background-color: aqua;
+}
+
+li.품절{
+    color: rgb(168, 39, 45);
+}
+
+.판매중{
+    color: black;
+}
+
+.myclass3 {
+    font-size: 50px;
+}
+
+input[type="text"] {
+    background: black;
+}
+input[type="password"] {
+    background: blue;
+}

@@ -1,0 +1,11 @@
+h1:hover {
+    color: aqua;
+}
+
+h1:active {
+    color: greenyellow;
+}
+
+input:enabled{background-color: white;}
+input:disabled{background-color: grey;}
+input:focus{background-color: orangered;}

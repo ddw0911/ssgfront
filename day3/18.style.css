@@ -1,0 +1,29 @@
+@media (max-width: 1200px) {
+    /* 너비가 1200px이하인 화면에서 배경색을 변경 */
+    body{
+        background-color: orange;
+    }
+}
+
+@media (max-width: 600px){
+    body{
+        background-color: olive;
+    }
+}
+
+/* body {
+    background-color: rgb(214, 160, 60);
+} */
+
+h1 {
+    /* border: 1px solid red; */
+    /* 블록속성으로 */
+    /* display: inline; */
+    /* h1밑줄, span 간격++ */
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+span {
+    padding: 10px;
+}
