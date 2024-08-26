@@ -3,11 +3,8 @@ html,body {
     height: 100%;
 }
 body{
-    /* 축변경 (가로->세로) */
     display: flex;
     /* 정렬 */
-    /* justify-content: space-around; */
-    /* align-items: column; */
     flex-direction: column;
     justify-content: center;
 }

@@ -1,0 +1,18 @@
+# rem, em : 글꼴의 크기 지정 단위 (상대 단위)
+  px : 절대단위
+  상대 단위로 설정하면, 해상도에 따라 유동적으로 변함
+  html 요소의 기본값이 16px = 1rem
+
+# overflow
+  내용이 요소의 크기를 벗어났을 때 어떻게 처리할지 정하는 속성
+  CSS 기본값 visible -> hidden, scroll, auto로 바꿔 감추기
+
+# 배경이미지 /w url
+  background-img: url("") ""안에 이미지 주소를 지정해서 해당 이미지를 불러 사용
+  border-radius : 테두리 둥글게
+  max-width : 최대 너비 설정
+  text-align : 텍스트 정렬 /w left, right, center, justify(양쪽정렬)
+
+# 클래스명 작성 /w BEM - 부모 클래스 이름을 이용하여 
+
+# 웹페이지 작성 시 기본 마진,패딩,테두리 초기화 작업 선행

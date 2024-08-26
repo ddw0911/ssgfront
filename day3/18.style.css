@@ -18,7 +18,7 @@
 h1 {
     /* border: 1px solid red; */
     /* 블록속성으로 */
-    /* display: inline; */
+    /* display: block; */
     /* h1밑줄, span 간격++ */
     border-bottom: 1px solid black;
     padding: 10px;

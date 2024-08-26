@@ -1,0 +1,140 @@
+@import "./global.css";
+
+body{
+    margin: 0 30px;
+}
+
+.user-component {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+ padding-top: 10px;
+}
+
+.user-component__profile {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ margin: 10px;
+}
+
+.user-component img,span{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.user-component__id {
+padding-top: 5px;
+font-size: 1rem;
+text-align: center;
+}
+
+.add-profile-btn {
+    background-color: grey;
+    font-size: 5rem;
+    margin-left: 10px;
+}
+
+.continue-watching__imges img {
+ width: 300px;
+ border-radius: 15px;
+ margin: 5px;
+}
+.continue-watching {
+  display: flex;
+  list-style: none;
+  height: 230px;
+border-bottom: 1px solid var(--darkpurple);
+}
+
+.continue-watching__card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  margin: 5px;
+  height: 200px;
+  background-color: var(--darkpurple);
+}
+
+.continue-watching__header {
+    margin-bottom: 10px;
+  
+}
+
+.continue-watching__title {
+width: 100%;
+padding: 5px;
+  font-size: 0.8rem;
+}
+
+.wishlist__img {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 15px;
+}
+.wishlist__header {
+  margin: 10px;
+}
+.wishlist-item {
+display: flex;
+    background-color: var(--darkpurple);
+    border-radius: 15px;
+    width: 100%;
+    height: 60px;
+    margin: 5px;
+}
+.wishlist-info {
+ display: flex;
+ flex-direction: column;
+}
+
+.wishlist__title {
+    padding-top: 10px;
+    padding-left: 5px;
+}
+  
+.wishlist__subtitle {
+  font-size: 0.8rem;
+padding-left: 5px;
+}
+
+.wishlist-play-btn{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+        background-color: var(--purple);
+        border-radius: 50%;
+        right: calc(1.5rem);
+        font-size: 2.5rem;
+    }
+
+.wishlist {
+display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.navigation-bar {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 8rem;
+    height: 3rem;
+    border-radius: 0 15px 0 0;
+    position: fixed;
+    display: flex;
+      justify-content: space-around;
+      align-items: center;
+    bottom: 0;
+    left: 0;
+}
+
+.navigation-bar span {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 8px;
+    color: black;
+    font-size: 1.5rem;
+
+}
