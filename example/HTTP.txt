@@ -1,0 +1,89 @@
+! 인터넷과 웹
+인터넷 - 여러 컴퓨터와 네트워크를 연결하는 네트워크 /w TCP/IP 프로토콜
+웹 - 인터넷 상에서 특정한 방식으로 동작하는 정보 시스템 /w HTTP 프로토콜 (HTML, 하이퍼텍스트 시스템, URL)
+
+# HTTP의 역할
+1. 인터넷의 공용어
+2. 인터넷에서 리소스 송수신
+
+? 얼마나 많은 클라이언트와 서바가 통신하는지
+? 리소스(웹 컨텐츠)가 어디서 오는지
+? 웹 트랜잭션이 어떻게 동작하는지
+? HTTP 통신을 위해 사용하는 메시지 형식
+? HTTP (TCP 네트워크전송)
+
+# OSI 7Layer (강의자료 1번 참조) open systems interconnection reference model 
+컴퓨터 네트워크 프로토콜과 통신을 계층적으로 나누어 개념적으로 설명 -> 각 계층은 네
+ex)
+물리계층 : 신호(파형)를 비트로 transform (부호화, 양자화) ex) LAN카드(NIC)
+HTTP, FTP / 응용계층
+TCP, UDP / 전송계층
+IP / 네트워크계층
+ethernet frame MAC주소를 담고있는 / 물리계층
+
+# 미디어타입 (MIME - 리소스의 유형을 식별하기 위한 표준 포맷 ex)이미지.jpg, 자바스크립트.js)
+
+? protocol vs port
+protocol : 네트워크에서 데이터 송수신에 필요한 규칙, 절차 (같은 프로토콜을 사용해야 원활한 통신 가능)
+port : 특정 서비스를 식별하기 위해 사용하는 숫자
+
+# IP vs TCP vs UDP
+internet protocol 한계 - 비연결성(받을 대상이 없거나 서비스불능항태에도 전송), 비신뢰성(패킷손실, 순서에 대한 보장x), 프로그램 구분x 
+transmission contorl protocol for 신뢰성(데이터검증)을 보장하는 송수신 /w 3way handshking
+user datagram protocol : 신뢰성보장(검증) 없음 but 빠른속도 - 실시간 스트리밍, 게임등에 이용
+
+# Port - 프로세스를 구분해서 처리하기 위해 (멀티프로세싱, 멀티태스킹)
+0~65535 할당가능 but 0~1023 시스템이 사용하므로 이외의 것 사용
+http 80, https 443, smtp 25, ftp 21
+
+# DNS domain name system - 도메인 명을 IP로 변경해주는 by dns서버
+
+# URI identifier(URL, URN)
+URL : 웹브라우저가 정보를 찾는데 필요한 리소스의 위치 (locator)
+URN : 리소스 위치 상관없이 이름만으로 식별 (name)
+
+URL구조 : scheme://[userinfo@]host[:port][path][?query][#fragment]
+ex)
+http://www.naver.com/search?~~
+http : 통신방식 (scheme)
+www.naver.com : 호스트 (host)
+/search : 경로 (path)
+?~~ : 요청쿼리
+
++ Encoding system
+- 안전한 문자(ASCII) vs 불안전 문자(%로 시작, 16진수로 표현)
+
+? 메시지의 통신 절차
+HTTP 메시지 : HTTP 어플리케이션 간 주고받는 데이터 블록
+클라이언트 -> 프록시 - 서버 
+(메시지의 방향 - 인바운드(클->서), 아웃바운드(서->클))
+(메시지의 흐름 - 업스트림, 다운스트림(default))
+
+? HTTP 메시지의 시작줄, 헤더, 개체본문
+시작줄 : 실행해야할 요청, 수행결과 /w 메서드(GET,POST,PUT)
+헤더 : 요청, 본문에 대한 설명
+본문 : 요청내용
+
+? 요청과 응답 메시지의 차이
+응답메시지에는 상태코드가 명시되어있다
+
+? 요청메시지가 지원하는 메서드와 각 메서드의 기능
+connect 양방향 연결(TCP) 시작
+delete 지정한 리소스 삭제
+get 특정 리소스 요청
+head 특정 리소스의 헤더 요청
+options 통신 옵션을 확인할 때
+patch 리소스를 부분수정
+post 서버로 데이터 전송
+put 새로운 리소스생성 or 데이터 대체 (멱등 : 부수효과x)
+trace 리소스의 경로 체크
+
+? 응답메시지가 반환하는 상태코드 설명
+1xx : 요청 처리중
+2xx : 정상처리
+3xx : 완료하려면 추가행동 필요
+4xx : 요청수행불가(클라이언트 오류, syntax error)
+5xx : 서버오류
+
+? HTTP 헤더의 기능
+HTTP 전송에 필요한 모든 부가정보 (바디 내용, 크기, 요청클라이언트, 서버정보 등)

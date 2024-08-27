@@ -1,0 +1,24 @@
+# 반응형 웹
+웹브라우저는 '미디어 쿼리' 기능 지원
+미디어쿼리? 미디어타입에 따라 CSS를 다르게 적용하는 기능
+프린터, 데스크탑, 스마트폰, 태블릿, 키오스크, 시각장애용 웹 브라우저에 적합한 구현이 가능하도록
+-> 다양한 장치에 따라 해상도 크기 및 비율이 다를때 미디어쿼리를 적용하여 효율적인 개발과 유지보수를 용이하게
+
+# 설정
+1) meta 태그 : 웹페이지에 추가정보를 제공
+ <meta name="title" content="신세계INC 자바개발자 미니프로젝트">
+ <meta name="description" content="신세계 프로젝트 포트폴리오"> -- 검색엔진 노출
+
+2) viewport
+ <meta name="viewport" content="width height initial-scale(초기배율)"> 화면의 비율을 설정
+
+3) 미디어쿼리
+ @media(<미디어쿼리>){
+    CSS코드
+ }
+
+ <link rel="stylesheet" href="파일이름" media="미디어쿼리"> 적용
+
+ @ 규칙 : CSS 내부에서 특정한 규칙 표현
+
+ 
