@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = {
+            sayHello(){alert("hello");},
+            [Symbol("id")] : 12345,
+            nothing : undefined,
+            // 위에 3줄은 변환 안됨
+            name : 'Jon',
+            age : 30,
+            company : 'SSGINC',
+            // toString(){
+            //     return `{이름 : ${this.name}, 나이 : ${this.age}, 직장 : ${this.company}}`;
+            // }
+            isAdmin : false,
+            auth : ['user', 'teamLeader'],
+            married : null
+        };
+
+        let jsonUser = JSON.stringify(user); // user객체를 JSON으로
+        alert(user); // Object object
+        alert(typeof jsonUser); // string
+        alert(jsonUser);
+
+        let meeting = {
+            title : "Coffee Prince yunho",
+            room : {
+                age : 26,
+                isGirlfreind : false,
+                participants : ['천안','판교']
+            }
+        }
+
+        alert(JSON.stringify(meeting));
+
+        let numbers = "[0,1,2,3,4]"; // JSON데이터를 객체로
+        alert(JSON.parse(numbers));
+
+        let meeting2 = '{"name":"John", "friends":["용빈","태환","주환"]}';
+        
+        alert(JSON.parse(meeting2));
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prob</title>
+</head>
+<body>
+    <script>
+        // // 1
+        // let status = ['I', 'am', 'happy'];
+        // alert(status);
+        // // delete status[1]; 값만 삭제
+        // status.splice(1,1); // 인덱스 삭제
+        // alert(status);
+        // alert(status.length);
+        
+        // // 2
+        // let keyword = ['I', 'study', 'JS', 'right', 'now'];
+        // alert(keyword);
+        // keyword.splice(0,2); // 제거
+        // alert(keyword);
+        // keyword.splice(2,0,'I',"play"); // 2 : 앞에서 2번 인덱스에 추가
+        // alert(keyword);
+        // keyword.splice(-1,0,'lala','omg'); // -1 : 뒤에서부터 1번 인덱스에 추가
+        // alert(keyword);
+
+        // 3
+        // let numberSet = [1,2];
+        // alert(numberSet.concat([3,4])); // 추가
+        // alert(numberSet.concat([3,4],[5,6]));
+        // numberSet.forEach(alert); // 하나씩 출력
+        // numberSet.forEach((item, index, array) => {
+        //     alert(`${item} is at index ${index} in ${array}`);
+        // }
+
+        // 4
+        // let dummy = [1,0,false];
+        // alert(dummy.indexOf(0)); // 1
+        // alert(dummy.indexOf(false)); // 2
+        // alert(dummy.indexOf(null)); // -1
+        
+        // alert(dummy.includes(1)); // true /w === (항등연산자)
+
+        // const dummy1 =[NaN];
+        // alert(dummy1.indexOf(NaN));
+        // alert(dummy1.includes(NaN));
+
+        // 5
+        let length = ['I', 'am', 'Happy']; 
+        alert(length.map(item => item.length));// 문자열 길이로 변환
+        alert(length.sort());
+
+        let length2 = [1,2,15];
+        alert(length2.sort()); // 1,15,2 출력 - 문자로 정렬하기 때문
+
+        // function compareNum (n1,n2) {
+        //     if(n1>n2) return 1;
+        //     if(n1==n2) return 0;
+        //     if(n1<n2) return -1;
+        // }
+        const compareNum = (n1,n2) => n1>=n2 ? 1: -1;
+        alert(length2.sort(compareNum)); // 1,2,15
+
+        let nation = ['Korea', 'Japan', 'China'];
+        alert(nation.sort((a,b) => a>b?1:-1));
+        alert(nation.sort((a,b) => a.localeCompare(b))); // 유니코드 기준 비교
+        </script>
+</body>
+</html>

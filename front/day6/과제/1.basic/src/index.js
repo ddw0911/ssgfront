@@ -30,6 +30,8 @@ const completeFolderTree = function (folderList) {
     for (let i = 0; i < folderList.length; i++) {
         folderList[i].addEventListener('click', (event) => {
             // 여기에서 작업하세요.
+            document.getElementsByClassName('toggle').className.add('isOpen');
+            document.getElementsByClassName('lower-folder').style.display = 'block';
             console.log(event.target);
             console.log(event.target.parentNode);
             console.log(event.target.parentNode.querySelector('.lower-folder'));
