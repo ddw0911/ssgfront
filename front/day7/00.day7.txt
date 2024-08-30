@@ -83,17 +83,19 @@
             }
             console.log(outer());
 
-    4) 콜백함수 : 다른 함수의 인자로 전달되어 호출되는 함수 (전달받은 함수 HOF higher order fuction)
+    4) 콜백함수 : 다른 함수의 인자로 전달되어 호출되는 함수 (전달받은 함수는 HOF higher order fuction)
         ex)
-            function repeat(n,f) {
+            function repeat(n,f) { // HOF
                 for(let i =0; i<n; i++){
                 f(i);
                 }
-
-            let logEvenPrint = function (i) {
-            if(i%2==1) console.log(i);
-                }
             }
+
+            let logEvenPrint = function (i) { // 콜백함수
+                if(i%2==1) console.log(i);
+                }
+            
+            
 
     ?? script 속성 기본, async, defer (/w src="파일명.js")
         기본 : 스크립트를 만나면 다운로드하고 실행 전까지 HTML 파싱중단 
