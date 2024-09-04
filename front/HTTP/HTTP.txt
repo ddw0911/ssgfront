@@ -4,13 +4,24 @@
 
 # HTTP의 역할
 1. 인터넷의 공용어
-2. 인터넷에서 리소스 송수신
+2. 인터넷에서 리소스 송수신 (html, text, 이미지, JSON, XML)
 
 ? 얼마나 많은 클라이언트와 서바가 통신하는지
 ? 리소스(웹 컨텐츠)가 어디서 오는지
 ? 웹 트랜잭션이 어떻게 동작하는지
 ? HTTP 통신을 위해 사용하는 메시지 형식
 ? HTTP (TCP 네트워크전송)
+
+# HTTP
+    HTTP 1.1 - 가장 많이 사용(핵심기능), 이후버전은 성능개선
+    TCP - 1.1, 2 / UDP - 3
+
+    stateful vs stateless
+        stateful 상태유지 - 항상 같은 서버유지 (서버장애 시 클라이언트 재요청해야 - 최소한만 사용) ex)로그인
+        stateless 무상태 - 서버확장 가능 (스케일아웃) ex) 단순서비스 화면
+
+    비연결성 (기본적으로 연결유지 x) - 효율적인 자원 사용
+        but 매번 3 way handshaking -> 연결성 유지 보완 /w 쿠키, 세션, 지속연결 /w keep-alive 헤더
 
 # OSI 7Layer (강의자료 1번 참조) open systems interconnection reference model 
 컴퓨터 네트워크 프로토콜과 통신을 계층적으로 나누어 개념적으로 설명 -> 각 계층은 네
@@ -28,17 +39,17 @@ protocol : 네트워크에서 데이터 송수신에 필요한 규칙, 절차 (�
 port : 특정 서비스를 식별하기 위해 사용하는 숫자
 
 # IP vs TCP vs UDP
-internet protocol 한계 - 비연결성(받을 대상이 없거나 서비스불능항태에도 전송), 비신뢰성(패킷손실, 순서에 대한 보장x), 프로그램 구분x 
-transmission contorl protocol for 신뢰성(데이터검증)을 보장하는 송수신 /w 3way handshking
-user datagram protocol : 신뢰성보장(검증) 없음 but 빠른속도 - 실시간 스트리밍, 게임등에 이용
+    internet protocol 한계 - 비연결성(받을 대상이 없거나 서비스불능항태에도 전송), 비신뢰성(패킷손실, 순서에 대한 보장x), 프로그램 구분x 
+    transmission control protocol for 신뢰성(데이터검증)을 보장하는 송수신 /w 3way handshaking
+    user datagram protocol : 신뢰성보장(검증) 없음 but 빠른속도 - 실시간 스트리밍, 게임등에 이용
 
 # Port - 프로세스를 구분해서 처리하기 위해 (멀티프로세싱, 멀티태스킹)
 0~65535 할당가능 but 0~1023 시스템이 사용하므로 이외의 것 사용
 http 80, https 443, smtp 25, ftp 21
 
-# DNS domain name system - 도메인 명을 IP로 변경해주는 by dns서버
+# DNS domain name system - 도메인 명을 IP로 변경해주는 by dns 서버
 
-# URI identifier(URL, URN)
+# URI identifier(URL, URN) - 리소스 식별자 (일반적으로 명사로 표현 - 동작은 HTTP메서드로 표현)
 URL : 웹브라우저가 정보를 찾는데 필요한 리소스의 위치 (locator)
 URN : 리소스 위치 상관없이 이름만으로 식별 (name)
 
@@ -59,29 +70,30 @@ HTTP 메시지 : HTTP 어플리케이션 간 주고받는 데이터 블록
 (메시지의 방향 - 인바운드(클->서), 아웃바운드(서->클))
 (메시지의 흐름 - 업스트림, 다운스트림(default))
 
-? HTTP 메시지의 시작줄, 헤더, 개체본문
-시작줄 : 실행해야할 요청, 수행결과 /w 메서드(GET,POST,PUT)
-헤더 : 요청, 본문에 대한 설명
+? HTTP 메시지의 시작줄, 헤더, 공백, 개체본문
+시작줄 : 실행해야할 요청, 수행결과 /w 메서드(GET,POST,PUT), HTTP 버전
+헤더 : 요청, 본문에 대한 설명(메타데이터의 키값쌍)
+공백
 본문 : 요청내용
 
 ? 요청과 응답 메시지의 차이
 응답메시지에는 상태코드가 명시되어있다
 
 ? 요청메시지가 지원하는 메서드와 각 메서드의 기능
-connect 양방향 연결(TCP) 시작
-delete 지정한 리소스 삭제
-get 특정 리소스 요청
+get 특정 리소스 요청 (안전한 메서드)
+post 서버로 데이터 전송 -> 리소스 및 프로세스 변화, 컨트롤 URI( 동사로 표현된 URI )
+put 새로운 리소스생성 or 특정 리소스 대체 ( 클라이언트가 지정한 URI의 리소스는 멱등 )
+delete 특정 리소스 삭제
+patch 특정 리소스를 부분수정
 head 특정 리소스의 헤더 요청
 options 통신 옵션을 확인할 때
-patch 리소스를 부분수정
-post 서버로 데이터 전송
-put 새로운 리소스생성 or 데이터 대체 (멱등 : 부수효과x)
 trace 리소스의 경로 체크
+connect 양방향 연결(TCP) 시작
 
 ? 응답메시지가 반환하는 상태코드 설명
 1xx : 요청 처리중
 2xx : 정상처리
-3xx : 완료하려면 추가행동 필요
+3xx : 완료하려면 추가행동 필요 (redirection)
 4xx : 요청수행불가(클라이언트 오류, syntax error)
 5xx : 서버오류
 
